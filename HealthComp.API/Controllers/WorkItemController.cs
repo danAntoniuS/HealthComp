@@ -20,6 +20,12 @@ namespace HealthComp.API.Controllers
             this._workItemManager = Validator.ThrowIfNull(workItemManager, nameof(workItemManager));
         }
 
+        [HttpGet("{workItemId:int}/worKItemStatus")]
+        public int CalculateWorkItemDelay(int workItemId)
+        {
+            return this._workItemManager.CalculateWorkItemDelayOrAdvanceOnEstimateForWorItem(workItemId);
+        }
+
         [HttpPost]
         public ActionResult<WorkItem> CreateWorkItem([FromBody] WorkItem workItem)
         {

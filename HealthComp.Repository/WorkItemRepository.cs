@@ -25,7 +25,7 @@ namespace HealthComp.Repository
         }
         public WorkItem CreateWorkItem(WorkItem workItem)
         {
-            workItem.WorkItemId = maxWorkItemId;
+            workItem.WorkItemId = maxWorkItemId++;
             workItems.Add(workItem);
             return workItem;
         }

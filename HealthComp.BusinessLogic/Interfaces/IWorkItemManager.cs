@@ -7,6 +7,7 @@ namespace HealthComp.BusinessLogic.Interfaces
 {
     public interface IWorkItemManager
     {
+        int CalculateWorkItemDelayOrAdvanceOnEstimateForWorItem(int workItemId);
         WorkItem CreateWorkItem(WorkItem workItem);
         WorkItem GetWorkItem(int workItemId);
         WorkItem GetWorkItemAndActivities(int workItemId);

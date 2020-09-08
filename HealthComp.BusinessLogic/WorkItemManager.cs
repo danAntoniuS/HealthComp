@@ -16,6 +16,13 @@ namespace HealthComp.BusinessLogic
             this._workItemRepository = Validator.ThrowIfNull(workItemRepository, nameof(workItemRepository));
         }
 
+        public int CalculateWorkItemDelayOrAdvanceOnEstimateForWorItem(int workItemId)
+        {
+            WorkItem workItem = this._workItemRepository.GetWorkItem(workItemId);
+            WorkItemStatus workItemStatus = new WorkItemStatus(workItem);
+            return workItemStatus.CalculateDelayOrAdvanceOnEstimateForWorItem();
+        }
+
         public WorkItem CreateWorkItem(WorkItem workItem)
         {
             //in real life sometimes we have diferent objects between 

@@ -15,42 +15,32 @@ namespace HealthComp.API.Controllers
     public class ActivityController : ControllerBase
     {
         //private readonly IActivityManager _workItemManager;
-        public ActivityController()
+        public ActivityController()//(IActivityManager _workItemManager)
         {
             //to be added the manager for activities / omitted for brevity, similar to WorkItemManager
             //will show what it is different the configuration for hierarchical resources
         }
 
-        [HttpGet("{activityId:int}", Name = "GetActivity")]
-        public IActionResult GetActivity(int workItemId, int activityId)
+        [HttpGet]
+        public ActionResult<IEnumerable<Activity>> GetActivities(int workItemId)
         {
-            /*
-            if (!_workItemRepository.Exists(workItemId))
-            {
-                return NotFound();
-            }
+           
+            return Ok();
+        }
 
-            var activity = get acivities from repo
-
-            if (activity == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(activity);
-            */
+        [HttpGet("{activityId:int}", Name = "GetActivity")]
+        public ActionResult<Activity> GetActivity(int workItemId, int activityId)
+        {
+            
             //to avoid compiler error
             return Ok();
         }
 
 
         [HttpPost]
-        public ActionResult<Activity> CreatePointOfInterest(int workItemId,
+        public ActionResult<Activity> CreateActivity(int workItemId,
             [FromBody] Activity activity)
         {
-
-
-            //ommited similar
 
             //return CreatedAtRoute(
             //    nameof(GetActivity),
@@ -61,7 +51,22 @@ namespace HealthComp.API.Controllers
             return Ok();
         }
 
-        //etc
+        [HttpPut("{activityId:int}")]
+        public ActionResult UpdateActivity(int workItemId, int activityId,
+            [FromBody] Activity activity)
+        {
 
+            //etc
+            return NoContent();
+        }
+
+        [HttpDelete("{activityId:int}")]
+        public ActionResult DeleteActivity(int workItemId, int activityId,
+                    [FromBody] Activity activity)
+        {
+
+            //etc
+            return NoContent();
+        }
     }
 }
