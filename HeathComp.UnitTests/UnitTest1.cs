@@ -12,8 +12,8 @@ namespace HeathComp.UnitTests
             //arrange
             WorkItem workItem = new WorkItem()
             {
-                ItemName = "Controller For Activities work item",
-                ItemDescription = "Controller For Activities pulls related activities for an work item",
+                ItemName = "Activities for developing a work item",
+                ItemDescription = "Related activities for an work item",
                 EstimatedTimeToCompletionInMinutes = 90,
                 WorkItemId = 1,
                 Activities = new System.Collections.Generic.List<Activity>

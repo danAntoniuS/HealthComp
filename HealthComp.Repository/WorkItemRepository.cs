@@ -15,7 +15,7 @@ namespace HealthComp.Repository
         public int maxWorkItemId = 1;
 
         /// <summary>
-        /// //cn not use here illustration for how we configure and pass it through DI 
+        /// //connection not used; illustration for how we configure and pass it through DI 
         /// in case of using Dapper
         /// </summary>
         /// <param name="workItemDBConnectionString"></param>
